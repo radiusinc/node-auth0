@@ -22,6 +22,7 @@ var JobsManager = require('./JobsManager');
 var TicketsManager = require('./TicketsManager');
 var LogsManager = require('./LogsManager');
 var ResourceServersManager = require('./ResourceServersManager');
+var UserBlocksManager = require('./UserBlocksManager');
 
 var BASE_URL_FORMAT = 'https://%s/api/v2';
 
@@ -186,6 +187,8 @@ var ManagementClient = function (options) {
    * @type {ResourceServersManager}
    */
   this.resourceServers = new ResourceServersManager(managerOptions);
+
+  this.userBlocks = new UserBlocksManager(managerOptions);
 
 };
 
@@ -1551,4 +1554,7 @@ utils.wrapPropertyMethod(ManagementClient, 'deleteResourceServer', 'resourceServ
  * @return    {Promise|undefined}
  */
 utils.wrapPropertyMethod(ManagementClient, 'updateResourceServer', 'resourceServers.update');
+
+utils.wrapPropertyMethod(ManagementClient, 'getUserBlocks', 'userBlocks.get');
+
 module.exports = ManagementClient;
