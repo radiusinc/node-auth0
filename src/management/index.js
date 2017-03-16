@@ -1556,5 +1556,6 @@ utils.wrapPropertyMethod(ManagementClient, 'deleteResourceServer', 'resourceServ
 utils.wrapPropertyMethod(ManagementClient, 'updateResourceServer', 'resourceServers.update');
 
 utils.wrapPropertyMethod(ManagementClient, 'getUserBlocks', 'userBlocks.get');
+utils.wrapPropertyMethod(ManagementClient, 'deleteUserBlocks', 'userBlocks.delete');
 
 module.exports = ManagementClient;

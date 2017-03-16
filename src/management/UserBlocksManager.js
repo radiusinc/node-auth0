@@ -77,4 +77,28 @@ var UserBlocksManager = function (options) {
  */
 utils.wrapPropertyMethod(UserBlocksManager, 'get', 'resource.get');
 
+/**
+ * Delete an existing user-block.
+ *
+ * @method    delete
+ * @memberOf  module:management.UserBlocksManager.prototype
+ *
+ * @example
+ * management.userBlocks.delete({ id: USER_ID }, function (err) {
+ *   if (err) {
+ *     // Handle error.
+ *   }
+ *
+ *   // Rule deleted.
+ * });
+ *
+ * @param   {Object}    params        user block parameters.
+ * @param   {String}    params.id     User ID.
+ * @param   {Function}  [cb]          Callback function.
+ *
+ * @return  {Promise|undefined}
+ */
+utils.wrapPropertyMethod(UserBlocksManager, 'delete', 'resource.delete');
+
+
 module.exports = UserBlocksManager;
